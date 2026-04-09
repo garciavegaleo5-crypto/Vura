@@ -1,2 +1,1 @@
 # Vura
-index.html
