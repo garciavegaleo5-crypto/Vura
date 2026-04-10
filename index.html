@@ -1,70 +1,42 @@
-<!DOCTYPE<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VURA | Elevated Urban Staples</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <script src="https://www.paypal.com/sdk/js?client-id=BAARGesHDPftJc0dbfe8FEaPawgteXLAHNhNs4ijSN8uwiDKAG76OauJVfEzwnsc0lmJP8-KpY5-xbiyho&components=hosted-buttons&disable-funding=venmo&currency=EUR"></script>
+
     <style>
-        :root {
-            --black: #0a0a0a;
-            --white: #ffffff;
-            --grey: #f4f4f4;
-            --accent: #808080;
-        }
-
+        :root { --black: #0a0a0a; --white: #ffffff; --grey: #f4f4f4; --accent: #808080; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--white); color: var(--black); line-height: 1.6; }
-
-        /* Header */
+        body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--black); }
         header { background: var(--black); color: var(--white); padding: 20px; text-align: center; position: sticky; top: 0; z-index: 100; }
         header h1 { font-weight: 900; letter-spacing: 5px; font-size: 1.5rem; }
-
-        /* Banner Principal (Tríptico) */
-        .hero { width: 100%; background: var(--black); padding-bottom: 40px; }
-        .hero img { width: 100%; height: auto; display: block; border-bottom: 5px solid var(--black); }
-        .hero-text { text-align: center; padding: 40px 20px; color: var(--white); }
-        .hero-text h2 { font-size: 2rem; margin-bottom: 10px; text-transform: uppercase; }
-        .hero-text p { color: var(--accent); font-size: 0.9rem; letter-spacing: 1px; }
-
-        /* Grid de Productos */
+        .hero { width: 100%; background: var(--black); }
+        .hero img { width: 100%; height: auto; display: block; }
+        .hero-text { text-align: center; padding: 40px 20px; color: var(--white); background: var(--black); }
         .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
         .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-        
-        .product-card { background: var(--grey); padding: 20px; border-radius: 4px; transition: transform 0.3s ease; text-align: center; }
-        .product-card:hover { transform: translateY(-5px); }
+        .product-card { background: var(--grey); padding: 20px; border-radius: 4px; text-align: center; }
         .product-card img { width: 100%; border-radius: 2px; margin-bottom: 20px; }
-        .product-card h3 { font-size: 1.2rem; margin-bottom: 10px; text-transform: uppercase; }
-        .product-card .price { font-weight: 700; font-size: 1.1rem; margin-bottom: 20px; color: var(--accent); }
+        .price { font-weight: 700; font-size: 1.3rem; margin-bottom: 20px; }
         
-        .buy-btn { 
-            background: var(--black); color: var(--white); border: none; padding: 15px 30px; 
-            width: 100%; font-weight: 700; cursor: pointer; letter-spacing: 1px; transition: 0.3s;
-        }
-        .buy-btn:hover { background: #333; }
+        /* Contenedor para el botón de PayPal */
+        .paypal-container { margin-top: 20px; min-height: 50px; }
 
-        /* Footer */
-        footer { background: var(--grey); padding: 60px 20px; text-align: center; font-size: 0.8rem; color: var(--accent); border-top: 1px solid #ddd; }
-        .social-links { margin-bottom: 20px; }
-        .social-links a { color: var(--black); margin: 0 10px; text-decoration: none; font-weight: 700; }
-
-        @media (max-width: 768px) {
-            .hero-text h2 { font-size: 1.5rem; }
-        }
+        footer { background: var(--grey); padding: 40px; text-align: center; font-size: 0.8rem; margin-top: 50px; }
     </style>
 </head>
 <body>
-
-    <header>
-        <h1>VURA</h1>
-    </header>
+    <header><h1>VURA</h1></header>
 
     <section class="hero">
-        <img src="vurashop-elevated-ed-triptico.jpg" alt="Vura Elevated Collection">
+        <img src="triptico.jpg" alt="Vura Collection">
         <div class="hero-text">
-            <h2>"ELEVATED" COLLECTION</h2>
-            <p>EL LUJO URBANO REIMAGINADO. DISPONIBLE AHORA.</p>
+            <h2>ELEVATED EDITION</h2>
+            <p>DETALLES BORDADOS | ALGODÓN PREMIUM</p>
         </div>
     </section>
 
@@ -72,31 +44,44 @@
         <div class="product-grid">
             
             <div class="product-card">
-                <img src="vurashop-elevated-ed-triptico.jpg" alt="Vura Elevated Tee">
-                <h3>Elevated Signature Tee</h3>
-                <p>Negro Onyx | Detalle en manga bordado</p>
-                <p class="price">39,99€</p>
-                <button class="buy-btn">COMPRAR AHORA</button>
+                <img src="triptico.jpg" alt="Elevated Tee">
+                <h3>Vura "Elevated" Signature</h3>
+                <p>Negro Onyx | Bordado en manga</p>
+                <p class="price">36,99€</p>
+                <div id="paypal-container-elevated" class="paypal-container"></div>
             </div>
 
             <div class="product-card">
-                <img src="ea97e877-bc7b-4a50-bdd8-f87ecdfb294e.jpeg" alt="Vura Classic Tee">
+                <img src="camisetablanca.jpg" alt="Classic Tee">
                 <h3>Vura Classic Essential</h3>
-                <p>Negro Mate | Logo frontal metálico</p>
-                <p class="price">29,99€</p>
-                <button class="buy-btn">COMPRAR AHORA</button>
+                <p>Negro Mate | Logo Frontal</p>
+                <p class="price">36,99€</p>
+                <div id="paypal-container-classic" class="paypal-container"></div>
             </div>
 
         </div>
     </div>
 
-    <footer>
-        <div class="social-links">
-            <a href="#">TIKTOK</a>
-            <a href="#">INSTAGRAM</a>
-        </div>
-        <p>&copy; 2026 VURA SHOP. All Rights Reserved. Crafted for the Urban Soul.</p>
-    </footer>
+    <footer><p>&copy; 2026 VURA SHOP. Elevated Urban Staples.</p></footer>
 
+    <script>
+        // Botón para la Elevated Signature
+        paypal.Buttons({
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{ amount: { value: '36.99' } }]
+                });
+            }
+        }).render('#paypal-container-elevated');
+
+        // Botón para la Classic Essential
+        paypal.Buttons({
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{ amount: { value: '36.99' } }]
+                });
+            }
+        }).render('#paypal-container-classic');
+    </script>
 </body>
 </html>
