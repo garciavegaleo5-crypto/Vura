@@ -1,0 +1,11 @@
+<div class="product-showcase">
+    <h2>Lanzamiento Exclusivo: Elevated Signature Tee</h2>
+    <div class="triptych-container">
+        <img src="vurashop-elevated-ed-triptico.jpg" alt="Vura Elevated Signature Tee Showcase" class="full-width-triptych">
+    </div>
+    <div class="product-details-text">
+        <p>Negro Onyx | Bordado de alta densidad en manga "Elevated" | Logo V Metálico.</p>
+        <p class="price">39,99€</p>
+        <button class="buy-btn">AÑADIR A LA CESTA (PayPal)</button>
+    </div>
+</div>
