@@ -19,11 +19,12 @@
         .hero-text { text-align: center; padding: 40px 20px; color: var(--white); background: var(--black); }
         .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
         .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-        .product-card { background: var(--grey); padding: 20px; border-radius: 4px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; }
+        .product-card { background: var(--grey); padding: 20px; border-radius: 4px; text-align: center; display: flex; flex-direction: column; }
         .product-card img { width: 100%; border-radius: 2px; margin-bottom: 20px; }
         .price { font-weight: 700; font-size: 1.3rem; margin: 15px 0; }
         
-        .paypal-container { margin-top: auto; min-height: 150px; }
+        /* Contenedor para que el botón de PayPal tenga espacio */
+        .paypal-button-container { margin-top: 10px; min-height: 150px; z-index: 1; }
 
         footer { background: var(--grey); padding: 40px; text-align: center; font-size: 0.8rem; margin-top: 50px; }
     </style>
@@ -47,7 +48,7 @@
                 <h3>Vura "Elevated" Signature</h3>
                 <p>Negro Onyx | Bordado en manga</p>
                 <p class="price">36,99€</p>
-                <div id="paypal-container-elevated" class="paypal-container"></div>
+                <div id="paypal-button-elevated" class="paypal-button-container"></div>
             </div>
 
             <div class="product-card">
@@ -55,7 +56,7 @@
                 <h3>Vura Classic Essential</h3>
                 <p>Negro Mate | Logo Frontal</p>
                 <p class="price">36,99€</p>
-                <div id="paypal-container-classic" class="paypal-container"></div>
+                <div id="paypal-button-classic" class="paypal-button-container"></div>
             </div>
 
         </div>
@@ -64,23 +65,33 @@
     <footer><p>&copy; 2026 VURA SHOP. Elevated Urban Staples.</p></footer>
 
     <script>
-        // Botón para la Elevated Signature
+        // Renderizar botón para la Elevated Signature
         paypal.Buttons({
             createOrder: function(data, actions) {
                 return actions.order.create({
                     purchase_units: [{ amount: { value: '36.99' } }]
                 });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    alert('¡Gracias por tu compra, ' + details.payer.name.given_name + '!');
+                });
             }
-        }).render('#paypal-container-elevated');
+        }).render('#paypal-button-elevated');
 
-        // Botón para la Classic Essential
+        // Renderizar botón para la Classic Essential
         paypal.Buttons({
             createOrder: function(data, actions) {
                 return actions.order.create({
                     purchase_units: [{ amount: { value: '36.99' } }]
                 });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    alert('¡Gracias por tu compra, ' + details.payer.name.given_name + '!');
+                });
             }
-        }).render('#paypal-container-classic');
+        }).render('#paypal-button-classic');
     </script>
 </body>
 </html>
