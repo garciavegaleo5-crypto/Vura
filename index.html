@@ -15,30 +15,35 @@
         body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--black); }
         header { background: var(--black); color: var(--white); padding: 20px; text-align: center; position: sticky; top: 0; z-index: 100; }
         header h1 { font-weight: 900; letter-spacing: 5px; font-size: 1.5rem; }
+        
         .hero { width: 100%; background: var(--black); }
         .hero img { width: 100%; height: auto; display: block; }
         .hero-text { text-align: center; padding: 60px 20px; color: var(--white); background: var(--black); }
-        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-        .product-card { background: var(--grey); padding: 20px; border-radius: 4px; text-align: center; display: flex; flex-direction: column; }
         
-        /* Estilo para las imágenes del producto */
-        .product-card img { width: 100%; height: 400px; object-fit: cover; border-radius: 2px; margin-bottom: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        
+        /* Cuadrícula de productos: ahora permite 2 columnas */
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
+        .product-card { background: var(--grey); padding: 30px; border-radius: 4px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid #ddd; }
+        
+        /* Estilo para las imágenes de los productos */
+        .product-card .main-image { width: 100%; height: 450px; object-fit: cover; border-radius: 2px; margin-bottom: 20px; }
 
-        /* Estilo específico para la mini-galería del primer producto */
-        .product-gallery { display: flex; gap: 10px; margin-bottom: 20px; }
-        .product-gallery img { height: 200px; /* Imágenes más bajas para que quepan las dos */ margin-bottom: 0; }
+        /* Mini-galería para el segundo producto combinando dos fotos */
+        .product-gallery { display: flex; gap: 15px; margin-bottom: 20px; }
+        .product-gallery img { width: calc(50% - 7.5px); height: 250px; object-fit: cover; border-radius: 2px; margin-bottom: 0; }
 
-        .price { font-weight: 700; font-size: 1.3rem; margin: 15px 0; }
-        .paypal-button-container { margin-top: auto; min-height: 150px; z-index: 1; }
-        footer { background: var(--grey); padding: 40px; text-align: center; font-size: 0.8rem; margin-top: 50px; }
+        .price { font-weight: 700; font-size: 1.5rem; margin: 15px 0 25px 0; }
+        .paypal-button-container { min-height: 150px; z-index: 1; }
+        
+        footer { background: var(--grey); padding: 40px; text-align: center; font-size: 0.8rem; margin-top: 50px; border-top: 1px solid #ddd; }
     </style>
 </head>
 <body>
     <header><h1>VURA</h1></header>
 
     <section class="hero">
-        <img src="triptico.jpg" alt="Vura Collection Banner">
+        <img src="triptico_principal.jpg" alt="Vura Collection Banner">
         <div class="hero-text">
             <h2>ELEVATED EDITION</h2>
             <p>DETALLES BORDADOS | ALGODÓN PREMIUM</p>
@@ -49,10 +54,7 @@
         <div class="product-grid">
             
             <div class="product-card">
-                <div class="product-gallery">
-                    <img src="triptico.jpg" alt="Vura Elevated Signature - Conjunto">
-                    <img src="manga.jpg" alt="Vura Elevated Signature - Detalle">
-                </div>
+                <img src="triptico_principal.jpg" alt="Vura Elevated Signature" class="main-image">
                 <h3>Vura "Elevated" Signature</h3>
                 <p>Negro Onyx | Bordado en manga</p>
                 <p class="price">36,99€</p>
@@ -60,11 +62,14 @@
             </div>
 
             <div class="product-card">
-                <img src="camisetablanca.jpg" alt="Vura Classic Essential">
-                <h3>Vura Classic Essential</h3>
-                <p>Negro Mate | Logo Frontal</p>
-                <p class="price">36,99€</p>
-                <div id="paypal-button-classic" class="paypal-button-container"></div>
+                <div class="product-gallery">
+                    <img src="modelos_jovenes.jpg" alt="Vura Rectangular Stitch - Modelos">
+                    <img src="camiseta_rectangular.jpg" alt="Vura Rectangular Stitch - Prenda">
+                </div>
+                <h3>Vura Rectangular Stitch</h3>
+                <p>Oversize | Parche Rectangular Gris</p>
+                <p class="price">26,99€</p>
+                <div id="paypal-button-rectangular" class="paypal-button-container"></div>
             </div>
 
         </div>
@@ -73,19 +78,19 @@
     <footer><p>&copy; 2026 VURA SHOP. Elevated Urban Staples.</p></footer>
 
     <script>
-        // Botón para Elevated Signature
+        // Botón Anuncio 1 (36,99€)
         paypal.Buttons({
             createOrder: function(data, actions) {
                 return actions.order.create({ purchase_units: [{ amount: { value: '36.99' } }] });
             }
         }).render('#paypal-button-elevated');
 
-        // Botón para Classic Essential
+        // Botón Anuncio 2 (26,99€)
         paypal.Buttons({
             createOrder: function(data, actions) {
-                return actions.order.create({ purchase_units: [{ amount: { value: '36.99' } }] });
+                return actions.order.create({ purchase_units: [{ amount: { value: '26.99' } }] });
             }
-        }).render('#paypal-button-classic');
+        }).render('#paypal-button-rectangular');
     </script>
 </body>
 </html>
