@@ -19,12 +19,11 @@
         .hero-text { text-align: center; padding: 40px 20px; color: var(--white); background: var(--black); }
         .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
         .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-        .product-card { background: var(--grey); padding: 20px; border-radius: 4px; text-align: center; }
+        .product-card { background: var(--grey); padding: 20px; border-radius: 4px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; }
         .product-card img { width: 100%; border-radius: 2px; margin-bottom: 20px; }
-        .price { font-weight: 700; font-size: 1.3rem; margin-bottom: 20px; }
+        .price { font-weight: 700; font-size: 1.3rem; margin: 15px 0; }
         
-        /* Contenedor para el botón de PayPal */
-        .paypal-container { margin-top: 20px; min-height: 50px; }
+        .paypal-container { margin-top: auto; min-height: 150px; }
 
         footer { background: var(--grey); padding: 40px; text-align: center; font-size: 0.8rem; margin-top: 50px; }
     </style>
