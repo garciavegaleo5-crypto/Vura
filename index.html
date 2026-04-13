@@ -5,30 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VURA SHOP | Elevated Urban Staples</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    <script src="https://www.paypal.com/sdk/js?client-id=sb&components=hosted-buttons&disable-funding=venmo&currency=EUR"></script>
+    
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&components=hosted-buttons"></script>
 
     <style>
         :root { --black: #0a0a0a; --white: #ffffff; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--black); padding-bottom: 50px; }
-        header { text-align: center; padding: 40px 20px; background: var(--black); color: var(--white); margin-bottom: 40px; }
+        
+        /* Encabezado y Carrito */
+        header { text-align: center; padding: 40px 20px; background: var(--black); color: var(--white); position: relative; }
         header h1 { font-weight: 900; letter-spacing: 10px; font-size: 2rem; }
-        .container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 40px; padding: 0 20px; }
+        .cart-wrapper { margin-top: 20px; display: flex; justify-content: center; }
+
+        .container { max-width: 1200px; margin: 40px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; padding: 0 20px; }
+        
         .product-card { background: var(--white); padding: 20px; border-radius: 4px; border: 1px solid #eee; text-align: center; display: flex; flex-direction: column; }
+        
         .vura-gallery { display: grid; grid-template-columns: 2fr 1fr; gap: 10px; margin-bottom: 20px; }
         .vura-gallery img { width: 100%; height: 100%; object-fit: cover; border-radius: 2px; }
-        .img-main { grid-row: span 2; height: 400px !important; }
-        .img-detail { height: 195px !important; }
+        .img-main { grid-row: span 2; height: 350px !important; }
+        .img-detail { height: 170px !important; }
+
         .title { font-weight: 700; font-size: 1.4rem; margin-top: 10px; }
-        .price { font-weight: 900; font-size: 1.8rem; margin: 10px 0 20px 0; }
-        .description-box { text-align: left; font-size: 0.8rem; line-height: 1.4; color: #333; margin-bottom: 25px; white-space: pre-wrap; font-family: monospace; background: #f9f9f9; padding: 15px; border-radius: 4px; }
-        .paypal-container { min-height: 150px; margin-top: auto; }
-        footer { text-align: center; margin-top: 80px; font-size: 0.7rem; color: #bbb; letter-spacing: 3px; }
+        .price { font-weight: 900; font-size: 1.8rem; margin: 10px 0; }
+        .description-box { text-align: left; font-size: 0.8rem; line-height: 1.4; color: #333; margin-bottom: 20px; white-space: pre-wrap; font-family: monospace; background: #f9f9f9; padding: 15px; }
+        
+        .paypal-container { min-height: 100px; margin-top: auto; }
+        
+        footer { text-align: center; margin-top: 80px; font-size: 0.7rem; color: #bbb; letter-spacing: 3px; padding: 20px; }
     </style>
 </head>
 <body>
 
-<header><h1>VURA</h1></header>
+<header>
+    <h1>VURA</h1>
+    <div class="cart-wrapper">
+        <div id="pp-view-cart"></div>
+    </div>
+</header>
 
 <div class="container">
 
@@ -40,28 +55,7 @@
         </div>
         <h2 class="title">VURA "Legacy" Cap</h2>
         <p class="price">24,95€</p>
-        <div class="description-box">
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-        VURA | ACCESORIOS PREMIUM
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-El toque final para cualquier outfit. Nuestra Legacy Cap 
-combina un diseño clásico de perfil bajo con máxima calidad.
-
-• 100% SARGA DE ALGODÓN: Tejido resistente y transpirable 
-  para un uso diario confortable.
-• DISEÑO DE 6 PANELES: Estructura clásica "Dad Hat" de perfil 
-  bajo que se adapta perfectamente a la cabeza.
-• CIERRE AJUSTABLE: Hebilla metálica de latón envejecido para 
-  un ajuste personalizado y duradero.
-• DETALLES TÉCNICOS: Visera precurvada y 6 ojales de 
-  ventilación bordados.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-      HEADWEAR BY VURA.
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-        </div>
-        <div id="btn-cap-2495" class="paypal-container"></div>
+        <div id="paypal-container-CAP" class="paypal-container"></div>
     </div>
 
     <div class="product-card">
@@ -72,7 +66,8 @@ combina un diseño clásico de perfil bajo con máxima calidad.
         </div>
         <h2 class="title">VURA "Identity" - Flo Blue</h2>
         <p class="price">29,95€</p>
-        <div id="btn-flo-2995" class="paypal-container"></div>
+        <div class="description-box">VURA | ESENCIA URBANA 1717</div>
+        <div id="paypal-container-V9WSNQQD4BNZG-FLO" class="paypal-container"></div>
     </div>
 
     <div class="product-card">
@@ -81,82 +76,38 @@ combina un diseño clásico de perfil bajo con máxima calidad.
             <img src="identity_pepper_folded.jpg" class="img-detail">
             <img src="identity_pepper_model.jpg" class="img-detail">
         </div>
-        <h2 class="title">VURA "Identity" - Pepper Carbon</h2>
+        <h2 class="title">VURA "Identity" - Pepper</h2>
         <p class="price">29,95€</p>
-        <div id="btn-pepper-2995" class="paypal-container"></div>
-    </div>
-
-    <div class="product-card">
-        <div class="vura-gallery">
-            <img src="identity_blue_front.jpg" class="img-main">
-            <img src="identity_blue_folded.jpg" class="img-detail">
-            <img src="identity_blue_model.jpg" class="img-detail">
-        </div>
-        <h2 class="title">VURA "Identity" - Midnight Blue</h2>
-        <p class="price">29,95€</p>
-        <div id="btn-blue-2995" class="paypal-container"></div>
-    </div>
-
-    <div class="product-card">
-        <div class="vura-gallery">
-            <img src="identity_front.jpg" class="img-main">
-            <img src="identity_folded.jpg" class="img-detail">
-            <img src="identity_model.jpg" class="img-detail">
-        </div>
-        <h2 class="title">VURA "Identity" - Onyx Black</h2>
-        <p class="price">29,95€</p>
-        <div id="btn-black-2995" class="paypal-container"></div>
-    </div>
-
-    <div class="product-card">
-        <div class="vura-gallery">
-            <img src="codigo026_frontal.jpg" class="img-main">
-            <img src="codigo026_espalda.jpg" class="img-detail">
-            <img src="codigo026_modelo.jpg" class="img-detail">
-        </div>
-        <h2 class="title">Código 026</h2>
-        <p class="price">39,95€</p>
-        <div id="btn-3995" class="paypal-container"></div>
-    </div>
-
-    <div class="product-card">
-        <h2 class="title">Vura "Elevated" Signature</h2>
-        <p class="price">36,99€</p>
-        <div id="btn-3699" class="paypal-container"></div>
-    </div>
-
-    <div class="product-card">
-        <h2 class="title">Vura Rectangular Stitch</h2>
-        <p class="price">26,99€</p>
-        <div id="btn-2699" class="paypal-container"></div>
+        <div class="description-box">VURA | ESENCIA URBANA 1717</div>
+        <div id="paypal-container-V9WSNQQD4BNZG-PEPPER" class="paypal-container"></div>
     </div>
 
 </div>
 
-<footer><p>© 2026 VURA - ELEVATED URBAN STAPLES</p></footer>
+<footer>
+    <p>© 2026 VURA - ELEVATED URBAN STAPLES</p>
+</footer>
 
 <script>
-    const productos = [
-        { id: '#btn-cap-2495', valor: '24.95' },
-        { id: '#btn-flo-2995', valor: '29.95' },
-        { id: '#btn-pepper-2995', valor: '29.95' },
-        { id: '#btn-blue-2995', valor: '29.95' },
-        { id: '#btn-black-2995', valor: '29.95' },
-        { id: '#btn-3995', valor: '39.95' },
-        { id: '#btn-3699', valor: '36.99' },
-        { id: '#btn-2699', valor: '26.99' }
-    ];
+    // 1. RENDERIZAR EL BOTÓN DEL CARRITO
+    paypal.HostedButtons({
+        hostedButtonId: "V9WSNQQD4BNZG", // Usamos tu ID base para el carrito
+    }).render("#pp-view-cart");
 
-    productos.forEach(p => {
-        paypal.Buttons({
-            style: { layout: 'vertical', shape: 'rect' },
-            createOrder: (data, actions) => {
-                return actions.order.create({
-                    purchase_units: [{ amount: { value: p.valor } }]
-                });
-            }
-        }).render(p.id);
+    // 2. RENDERIZAR BOTONES DE PRODUCTOS DE 29,95€ (Usando tu nuevo ID)
+    const productosIdentity = ["#paypal-container-V9WSNQQD4BNZG-FLO", "#paypal-container-V9WSNQQD4BNZG-PEPPER"];
+    
+    productosIdentity.forEach(id => {
+        paypal.HostedButtons({
+            hostedButtonId: "V9WSNQQD4BNZG",
+        }).render(id);
     });
+
+    // 3. RENDERIZAR OTROS PRECIOS (Si tienes IDs diferentes para ellos, cámbialos aquí)
+    // Ejemplo para la gorra (si aún no tienes ID de hosted button para ella, usará el estándar)
+    paypal.HostedButtons({
+        hostedButtonId: "V9WSNQQD4BNZG", // Cambiar por el ID específico de la gorra cuando lo tengas
+    }).render("#paypal-container-CAP");
 </script>
 
 </body>
