@@ -3,97 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VURA SHOP | Elevated Staples</title>
+    <title>VURA SHOP | Elevated Urban Staples</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    <script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&components=hosted-buttons&disable-funding=venmo&currency=EUR"></script>
 
     <style>
-        :root { --black: #0a0a0a; --white: #ffffff; --grey: #f8f8f8; }
+        :root { --black: #0a0a0a; --white: #ffffff; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--black); padding: 40px 20px; }
-        
-        header { text-align: center; margin-bottom: 50px; }
-        header h1 { font-weight: 900; letter-spacing: 8px; font-size: 2rem; }
-
-        .container { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; }
-        
-        .product-card { background: var(--white); padding: 25px; border-radius: 8px; border: 1px solid #eee; text-align: center; display: flex; flex-direction: column; }
-
-        /* DISEÑO DE GALERÍA DE 3 FOTOS */
-        .vura-gallery { display: grid; grid-template-columns: 2fr 1fr; gap: 10px; margin-bottom: 25px; }
-        .vura-gallery img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; border: 1px solid #f0f0f0; }
-        .img-large { grid-row: span 2; height: 350px !important; }
-        .img-small { height: 170px !important; }
-
-        .title { font-weight: 700; font-size: 1.3rem; margin-bottom: 8px; }
-        .desc { color: #666; font-size: 0.95rem; margin-bottom: 15px; height: 40px; }
-        .price { font-weight: 900; font-size: 1.8rem; margin-bottom: 25px; }
-        
-        .paypal-box { min-height: 150px; }
-        
-        footer { text-align: center; margin-top: 60px; font-size: 0.8rem; color: #999; letter-spacing: 2px; }
-
-        @media (max-width: 500px) {
-            .container { grid-template-columns: 1fr; }
-            .img-large { height: 280px !important; }
-            .img-small { height: 135px !important; }
-        }
+        body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--black); padding-bottom: 50px; }
+        header { text-align: center; padding: 40px 20px; background: var(--black); color: var(--white); margin-bottom: 40px; }
+        header h1 { font-weight: 900; letter-spacing: 10px; font-size: 2rem; }
+        .container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 40px; padding: 0 20px; }
+        .product-card { background: var(--white); padding: 20px; border-radius: 4px; border: 1px solid #eee; text-align: center; display: flex; flex-direction: column; }
+        .vura-gallery { display: grid; grid-template-columns: 2fr 1fr; gap: 10px; margin-bottom: 20px; }
+        .vura-gallery img { width: 100%; height: 100%; object-fit: cover; border-radius: 2px; }
+        .img-main { grid-row: span 2; height: 400px !important; }
+        .img-detail { height: 195px !important; }
+        .title { font-weight: 700; font-size: 1.4rem; margin-top: 10px; }
+        .price { font-weight: 900; font-size: 1.8rem; margin: 10px 0 20px 0; }
+        .description-box { text-align: left; font-size: 0.8rem; line-height: 1.4; color: #333; margin-bottom: 25px; white-space: pre-wrap; font-family: monospace; background: #f9f9f9; padding: 15px; border-radius: 4px; }
+        .paypal-container { min-height: 150px; margin-top: auto; }
+        footer { text-align: center; margin-top: 80px; font-size: 0.7rem; color: #bbb; letter-spacing: 3px; }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>VURA</h1>
-</header>
+<header><h1>VURA</h1></header>
 
 <div class="container">
     <div class="product-card">
         <div class="vura-gallery">
-            <img src="triptico.jpg" class="img-large" alt="Vura Signature Elite">
-            <img src="camisetablanca.jpg" class="img-small" alt="Vura Tee">
-            <img src="manga.jpg" class="img-small" alt="Detail">
+            <img src="codigo026_frontal.jpg" class="img-main">
+            <img src="codigo026_espalda.jpg" class="img-detail">
+            <img src="codigo026_modelo.jpg" class="img-detail">
         </div>
+        <h2 class="title">Código 026</h2>
+        <p class="price">39,95€</p>
+        <div class="description-box">
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        VURA | CALIDAD PREMIUM 1717
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-        <h2 class="title">Vura "Elevated" Signature</h2>
-        <p class="desc">Negro Onyx | Algodón Premium | Bordado en manga</p>
-        <p class="price">36,99€</p>
+Nuestra camiseta estrella utiliza la base Comfort Colors 1717, 
+referente mundial por su durabilidad y estilo vintage auténtico.
 
-        <div id="paypal-button-1" class="paypal-box"></div>
+• TEJIDO HEAVYWEIGHT: 100% algodón hilado en anillo (207 g/m²) 
+  para una caída perfecta y máxima resistencia.
+• ACABADO GARMENT-DYED: Teñida en prenda para un look 
+  lavado y un tacto ultra suave que mejora con el tiempo.
+• SIN ENCOJIMIENTOS: Proceso de pre-encogido para que la 
+  talla que compres sea la talla que mantengas.
+• CORTE RELAJADO (Relaxed Fit): Diseñada para el confort 
+  diario y un estilo urbano impecable.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+      MENOS RUIDO, MÁS VURA.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        </div>
+        <div id="btn-3995" class="paypal-container"></div>
     </div>
 
     <div class="product-card">
         <div class="vura-gallery">
-            <img src="modelos_jovenes.jpg" class="img-large" alt="Vura Street Edition">
-            <img src="camiseta_parche_gris.jpg" class="img-small" alt="Vura Patch Tee">
-            <img src="detalle_parche.jpg" class="img-small" alt="Patch Detail">
+            <img src="triptico.jpg" class="img-main">
+            <img src="camisetablanca.jpg" class="img-detail">
+            <img src="manga.jpg" class="img-detail">
         </div>
+        <h2 class="title">Vura "Elevated" Signature</h2>
+        <p class="price">36,99€</p>
+        <div id="btn-3699" class="paypal-container"></div>
+    </div>
 
+    <div class="product-card">
+        <div class="vura-gallery">
+            <img src="modelos_jovenes.jpg" class="img-main">
+            <img src="camiseta_parche_gris.jpg" class="img-detail">
+            <img src="detalle_parche.jpg" class="img-detail">
+        </div>
         <h2 class="title">Vura Rectangular Stitch</h2>
-        <p class="desc">Oversize Fit | Parche Rectangular Gris | Urban Edition</p>
         <p class="price">26,99€</p>
-
-        <div id="paypal-button-2" class="paypal-box"></div>
+        <div id="btn-2699" class="paypal-container"></div>
     </div>
 </div>
 
-<footer>
-    <p>© 2026 VURA - ELEVATED URBAN STAPLES</p>
-</footer>
+<footer><p>© 2026 VURA - ELEVATED URBAN STAPLES</p></footer>
 
 <script>
-    // Botón para el producto de 36,99
+    // Botón 39,95€
     paypal.Buttons({
-        createOrder: (data, actions) => {
-            return actions.order.create({ purchase_units: [{ amount: { value: '36.99' } }] });
-        }
-    }).render('#paypal-button-1');
+        createOrder: (data, actions) => actions.order.create({ purchase_units: [{ amount: { value: '39.95' } }] })
+    }).render('#btn-3995');
 
-    // Botón para el producto de 26,99
+    // Botón 36,99€
     paypal.Buttons({
-        createOrder: (data, actions) => {
-            return actions.order.create({ purchase_units: [{ amount: { value: '26.99' } }] });
-        }
-    }).render('#paypal-button-2');
+        createOrder: (data, actions) => actions.order.create({ purchase_units: [{ amount: { value: '36.99' } }] })
+    }).render('#btn-3699');
+
+    // Botón 26,99€
+    paypal.Buttons({
+        createOrder: (data, actions) => actions.order.create({ purchase_units: [{ amount: { value: '26.99' } }] })
+    }).render('#btn-2699');
 </script>
 
 </body>
