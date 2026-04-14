@@ -6,7 +6,7 @@
     <title>VURA SHOP | Elevated Urban Staples</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     
-    <script src="https://www.paypal.com/sdk/js?client-id=TU_CLIENT_ID_REAL&components=hosted-buttons"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=PEGA_AQUI_TU_CLIENT_ID_LARGO&components=hosted-buttons"></script>
 
     <style>
         :root { --black: #0a0a0a; --white: #ffffff; }
@@ -14,21 +14,15 @@
         body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--black); padding-bottom: 50px; }
         header { text-align: center; padding: 40px 20px; background: var(--black); color: var(--white); }
         header h1 { font-weight: 900; letter-spacing: 10px; font-size: 2rem; margin: 0; }
-        
-        .cart-bar { background: #f4f4f4; padding: 15px; display: flex; justify-content: center; border-bottom: 1px solid #ddd; position: sticky; top: 0; z-index: 1000; }
-        
+        .cart-bar { background: #f4f4f4; padding: 15px; display: flex; justify-content: center; border-bottom: 1px solid #ddd; position: sticky; top: 0; z-index: 1000; min-height: 80px; }
         .container { max-width: 1200px; margin: 40px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; padding: 0 20px; }
-        .product-card { border: 1px solid #eee; padding: 20px; text-align: center; display: flex; flex-direction: column; background: #fff; }
-        
+        .product-card { border: 1px solid #eee; padding: 20px; text-align: center; display: flex; flex-direction: column; background: #fff; border-radius: 4px; }
         .vura-gallery { display: grid; grid-template-columns: 2fr 1fr; gap: 10px; margin-bottom: 20px; }
         .vura-gallery img { width: 100%; height: 100%; object-fit: cover; }
         .img-main { grid-row: span 2; height: 350px !important; }
         .img-detail { height: 170px !important; }
-
         .title { font-weight: 700; font-size: 1.3rem; margin-top: 10px; min-height: 50px; }
-        .price { font-weight: 900; font-size: 1.6rem; margin: 10px 0; color: #000; }
-        .description-box { text-align: left; font-size: 0.75rem; line-height: 1.4; color: #444; margin-bottom: 20px; background: #f8f8f8; padding: 12px; border-radius: 4px; font-family: monospace; }
-        
+        .price { font-weight: 900; font-size: 1.6rem; margin: 10px 0; }
         .paypal-slot { min-height: 100px; margin-top: auto; }
         footer { text-align: center; padding: 60px; color: #bbb; font-size: 0.7rem; letter-spacing: 3px; }
     </style>
@@ -42,7 +36,6 @@
 </div>
 
 <div class="container">
-
     <div class="product-card">
         <div class="vura-gallery">
             <img src="identity_front.jpg" class="img-main">
@@ -51,8 +44,7 @@
         </div>
         <h2 class="title">VURA "Identity" - Onyx Black</h2>
         <p class="price">29,95€</p>
-        <div class="description-box">COMFORT COLORS 1717 | 100% Algodón | Garment-Dyed</div>
-        <div id="paypal-container-ZGPMBZCK6U9EC" class="paypal-slot"></div>
+        <div id="paypal-1" class="paypal-slot"></div>
     </div>
 
     <div class="product-card">
@@ -63,32 +55,7 @@
         </div>
         <h2 class="title">VURA "Identity" - Midnight Blue</h2>
         <p class="price">29,95€</p>
-        <div class="description-box">COMFORT COLORS 1717 | 100% Algodón | Garment-Dyed</div>
-        <div id="paypal-container-LB5N2Z4F6M6QW" class="paypal-slot"></div>
-    </div>
-
-    <div class="product-card">
-        <div class="vura-gallery">
-            <img src="identity_pepper_front.jpg" class="img-main">
-            <img src="identity_pepper_folded.jpg" class="img-detail">
-            <img src="identity_pepper_model.jpg" class="img-detail">
-        </div>
-        <h2 class="title">VURA "Identity" - Pepper Carbon</h2>
-        <p class="price">29,95€</p>
-        <div class="description-box">COMFORT COLORS 1717 | 100% Algodón | Garment-Dyed</div>
-        <div id="paypal-container-MUWD5PRXAS5S2" class="paypal-slot"></div>
-    </div>
-
-    <div class="product-card">
-        <div class="vura-gallery">
-            <img src="identity_flo_front.jpg" class="img-main">
-            <img src="identity_flo_folded.jpg" class="img-detail">
-            <img src="identity_flo_model.jpg" class="img-detail">
-        </div>
-        <h2 class="title">VURA "Identity" - Flo Blue</h2>
-        <p class="price">29,95€</p>
-        <div class="description-box">COMFORT COLORS 1717 | 100% Algodón | Garment-Dyed</div>
-        <div id="paypal-container-RWXWPE8Q6ZPH2" class="paypal-slot"></div>
+        <div id="paypal-2" class="paypal-slot"></div>
     </div>
 
     <div class="product-card">
@@ -99,52 +66,24 @@
         </div>
         <h2 class="title">VURA "Legacy" Cap</h2>
         <p class="price">24,95€</p>
-        <div class="description-box">100% Sarga de Algodón | Cierre Ajustable | 6 Paneles</div>
-        <div id="paypal-container-9MSMH2UPKVVS4" class="paypal-slot"></div>
+        <div id="paypal-3" class="paypal-slot"></div>
     </div>
-
-    <div class="product-card">
-        <div class="vura-gallery">
-            <img src="codigo026_frontal.jpg" class="img-main">
-            <img src="codigo026_espalda.jpg" class="img-detail">
-            <img src="codigo026_modelo.jpg" class="img-detail">
-        </div>
-        <h2 class="title">VURA "Código 026"</h2>
-        <p class="price">39,95€</p>
-        <div class="description-box">Premium Heavyweight | Garment-Dyed | Relaxed Fit</div>
-        <div id="paypal-container-R4F6RAH4ZRT26" class="paypal-slot"></div>
-    </div>
-
-    <div class="product-card">
-        <div class="vura-gallery">
-            <img src="modelos_jovenes.jpg" class="img-main">
-            <img src="detalle_parche.jpg" class="img-detail">
-            <img src="camiseta_parche_gris.jpg" class="img-detail">
-        </div>
-        <h2 class="title">VURA "Rectangular Stitch"</h2>
-        <p class="price">26,99€</p>
-        <div class="description-box">Tejido Suave | Bordado Estructural | Urban Staples</div>
-        <div id="paypal-container-DVGC2SJPUMDXU" class="paypal-slot"></div>
-    </div>
-
 </div>
 
 <footer>© 2026 VURA - ELEVATED URBAN STAPLES</footer>
 
 <script>
-    // RENDERIZADO DE BOTONES CON TUS IDs REALES
-    
-    // Carrito
-    paypal.HostedButtons({ hostedButtonId: "ZGPMBZCK6U9EC" }).render("#pp-view-cart");
+    window.addEventListener('load', function() {
+        if (window.paypal && window.paypal.HostedButtons) {
+            // Ver Carrito (ID de la camiseta negra)
+            paypal.HostedButtons({ hostedButtonId: "ZGPMBZCK6U9EC" }).render("#pp-view-cart");
 
-    // Productos individuales
-    paypal.HostedButtons({ hostedButtonId: "ZGPMBZCK6U9EC" }).render("#paypal-container-ZGPMBZCK6U9EC");
-    paypal.HostedButtons({ hostedButtonId: "LB5N2Z4F6M6QW" }).render("#paypal-container-LB5N2Z4F6M6QW");
-    paypal.HostedButtons({ hostedButtonId: "MUWD5PRXAS5S2" }).render("#paypal-container-MUWD5PRXAS5S2");
-    paypal.HostedButtons({ hostedButtonId: "RWXWPE8Q6ZPH2" }).render("#paypal-container-RWXWPE8Q6ZPH2");
-    paypal.HostedButtons({ hostedButtonId: "9MSMH2UPKVVS4" }).render("#paypal-container-9MSMH2UPKVVS4");
-    paypal.HostedButtons({ hostedButtonId: "R4F6RAH4ZRT26" }).render("#paypal-container-R4F6RAH4ZRT26");
-    paypal.HostedButtons({ hostedButtonId: "DVGC2SJPUMDXU" }).render("#paypal-container-DVGC2SJPUMDXU");
+            // Botones individuales según tus IDs
+            paypal.HostedButtons({ hostedButtonId: "ZGPMBZCK6U9EC" }).render("#paypal-1");
+            paypal.HostedButtons({ hostedButtonId: "LB5N2Z4F6M6QW" }).render("#paypal-2");
+            paypal.HostedButtons({ hostedButtonId: "9MSMH2UPKVVS4" }).render("#paypal-3");
+        }
+    });
 </script>
 
 </body>
