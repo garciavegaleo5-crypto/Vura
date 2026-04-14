@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -11,26 +10,19 @@
 
     <style>
         :root { --black: #0a0a0a; --white: #ffffff; }
-        body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--black); margin: 0; padding-bottom: 50px; }
-        header { text-align: center; padding: 40px 20px; background: var(--black); color: var(--white); }
-        header h1 { font-weight: 900; letter-spacing: 10px; margin: 0; }
-        
-        /* Contenedor del Carrito Flotante */
-        .cart-section { display: flex; justify-content: center; padding: 20px; background: #f4f4f4; margin-bottom: 20px; }
-        
-        .container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 20px; }
-        .product-card { border: 1px solid #eee; padding: 20px; text-align: center; display: flex; flex-direction: column; }
-        .price { font-weight: 900; font-size: 1.5rem; margin: 15px 0; }
-        .paypal-container { min-height: 100px; }
+        body { font-family: 'Inter', sans-serif; background: var(--white); margin: 0; }
+        header { text-align: center; padding: 30px; background: var(--black); color: var(--white); }
+        .cart-container { display: flex; justify-content: center; padding: 15px; background: #f9f9f9; border-bottom: 1px solid #ddd; }
+        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        .product-card { border: 1px solid #eee; padding: 25px; text-align: center; max-width: 400px; margin: 0 auto; }
+        .price { font-weight: 900; font-size: 1.8rem; margin: 20px 0; }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>VURA</h1>
-</header>
+<header><h1>VURA</h1></header>
 
-<div class="cart-section">
+<div class="cart-container">
     <div id="pp-view-cart"></div>
 </div>
 
@@ -38,21 +30,30 @@
     <div class="product-card">
         <h2>VURA Identity</h2>
         <p class="price">29,95€</p>
+        
         <div id="paypal-container-V9WSNQQD4BNZG"></div>
     </div>
-    
-    </div>
+</div>
 
 <script>
-  // 1. Inicializar el botón de Ver Carrito
-  paypal.HostedButtons({
-    hostedButtonId: "V9WSNQQD4BNZG", 
-  }).render("#pp-view-cart");
+    // Esperamos a que el SDK cargue correctamente
+    window.onload = function() {
+        if (window.paypal && window.paypal.HostedButtons) {
+            
+            // 1. Renderizar el botón de "Ver Carrito"
+            paypal.HostedButtons({
+                hostedButtonId: "V9WSNQQD4BNZG",
+            }).render("#pp-view-cart");
 
-  // 2. Inicializar el botón de Compra del Producto
-  paypal.HostedButtons({
-    hostedButtonId: "V9WSNQQD4BNZG",
-  }).render("#paypal-container-V9WSNQQD4BNZG");
+            // 2. Renderizar el botón de "Añadir al Carrito / Comprar"
+            paypal.HostedButtons({
+                hostedButtonId: "V9WSNQQD4BNZG",
+            }).render("#paypal-container-V9WSNQQD4BNZG");
+            
+        } else {
+            console.error("El SDK de PayPal no se cargó correctamente.");
+        }
+    };
 </script>
 
 </body>
