@@ -6,7 +6,7 @@
     <title>VURA SHOP | Elevated Urban Staples</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     
-    <script src="https://www.paypal.com/sdk/js?client-id=Ac94A2-pGT_H7DVsKtG_50Yk53aXgR1aRj6hu_R69sODZirJqmlLj9KQQJu0Wv6IEEXHvUepgWZfoDtV&components=hosted-buttons"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AZr9I9-RXw6hNMHqsxlipjMccTpr2YEWwFoxvnL4kUZr5vE-wmJ00ByzA_dgIz8-BweQ0Q6OMzi58Lor&components=hosted-buttons"></script>
 
     <style>
         :root { --black: #0a0a0a; --white: #ffffff; }
@@ -38,7 +38,7 @@
 <div class="container">
     <div class="product-card">
         <div class="vura-gallery">
-            <img src="identity_front.jpg" class="img-main" alt="Vura Identity">
+            <img src="identity_front.jpg" class="img-main">
             <img src="identity_folded.jpg" class="img-detail">
             <img src="identity_model.jpg" class="img-detail">
         </div>
@@ -49,7 +49,7 @@
 
     <div class="product-card">
         <div class="vura-gallery">
-            <img src="identity_blue_front.jpg" class="img-main" alt="Vura Identity Blue">
+            <img src="identity_blue_front.jpg" class="img-main">
             <img src="identity_blue_folded.jpg" class="img-detail">
             <img src="identity_blue_model.jpg" class="img-detail">
         </div>
@@ -60,7 +60,7 @@
 
     <div class="product-card">
         <div class="vura-gallery">
-            <img src="gorra_frontal.jpg" class="img-main" alt="Vura Legacy Cap">
+            <img src="gorra_frontal.jpg" class="img-main">
             <img src="gorra_detalle.jpg" class="img-detail">
             <img src="gorra_modelo.jpg" class="img-detail">
         </div>
@@ -73,15 +73,10 @@
 <footer>© 2026 VURA - ELEVATED URBAN STAPLES</footer>
 
 <script>
-    // Script forzado para asegurar que PayPal cargue incluso en móviles lentos
     const checkPayPal = setInterval(function() {
         if (window.paypal && window.paypal.HostedButtons) {
             clearInterval(checkPayPal);
-            
-            // Renderizar botón de Ver Carrito
             paypal.HostedButtons({ hostedButtonId: "ZGPMBZCK6U9EC" }).render("#pp-view-cart");
-
-            // Renderizar botones de productos
             paypal.HostedButtons({ hostedButtonId: "ZGPMBZCK6U9EC" }).render("#paypal-1");
             paypal.HostedButtons({ hostedButtonId: "LB5N2Z4F6M6QW" }).render("#paypal-2");
             paypal.HostedButtons({ hostedButtonId: "9MSMH2UPKVVS4" }).render("#paypal-3");
