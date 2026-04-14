@@ -6,7 +6,7 @@
     <title>VURA SHOP | Elevated Urban Staples</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     
-    <script src="https://www.paypal.com/sdk/js?client-id=PEGA_AQUI_TU_CLIENT_ID_LARGO&components=hosted-buttons"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=Ac94A2-pGT_H7DVsKtG_50Yk53aXgR1aRj6hu_R69sODZirJqmlLj9KQQJu0Wv6IEEXHvUepgWZfoDtV&components=hosted-buttons"></script>
 
     <style>
         :root { --black: #0a0a0a; --white: #ffffff; }
@@ -75,10 +75,10 @@
 <script>
     window.addEventListener('load', function() {
         if (window.paypal && window.paypal.HostedButtons) {
-            // Ver Carrito (ID de la camiseta negra)
+            // Renderizar botón de Ver Carrito
             paypal.HostedButtons({ hostedButtonId: "ZGPMBZCK6U9EC" }).render("#pp-view-cart");
 
-            // Botones individuales según tus IDs
+            // Renderizar botones de productos
             paypal.HostedButtons({ hostedButtonId: "ZGPMBZCK6U9EC" }).render("#paypal-1");
             paypal.HostedButtons({ hostedButtonId: "LB5N2Z4F6M6QW" }).render("#paypal-2");
             paypal.HostedButtons({ hostedButtonId: "9MSMH2UPKVVS4" }).render("#paypal-3");
@@ -88,4 +88,3 @@
 
 </body>
 </html>
-
