@@ -3,27 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VURA SHOP | Elevated Urban Staples</title>
+    <title>VURA SHOP</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    
     <script src="https://www.paypal.com/sdk/js?client-id=Ac94A2-pGT_H7DVsKtG_50Yk53aXgR1aRj6hu_R69sODZirJqmlLj9KQQJu0Wv6IEEXHvUepgWZfoDtV&components=hosted-buttons"></script>
-
     <style>
         :root { --black: #0a0a0a; --white: #ffffff; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--black); padding-bottom: 50px; }
+        body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--black); }
         header { text-align: center; padding: 40px 20px; background: var(--black); color: var(--white); }
-        header h1 { font-weight: 900; letter-spacing: 10px; font-size: 2rem; margin: 0; }
+        header h1 { font-weight: 900; letter-spacing: 10px; font-size: 2rem; }
         .container { max-width: 1200px; margin: 40px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; padding: 0 20px; }
-        .product-card { border: 1px solid #eee; padding: 20px; text-align: center; display: flex; flex-direction: column; background: #fff; }
+        .product-card { border: 1px solid #eee; padding: 20px; text-align: center; background: #fff; }
         .vura-gallery { display: grid; grid-template-columns: 2fr 1fr; gap: 10px; margin-bottom: 20px; }
-        .vura-gallery img { width: 100%; height: 100%; object-fit: cover; background: #f9f9f9; }
-        .img-main { grid-row: span 2; height: 300px !important; }
-        .img-detail { height: 145px !important; }
-        .title { font-weight: 700; font-size: 1.2rem; margin-top: 10px; min-height: 40px; }
-        .price { font-weight: 900; font-size: 1.5rem; margin: 10px 0; color: #333; }
-        .paypal-slot { min-height: 150px; margin-top: auto; display: flex; justify-content: center; align-items: center; }
-        footer { text-align: center; padding: 60px; color: #bbb; font-size: 0.7rem; letter-spacing: 3px; }
+        .vura-gallery img { width: 100%; height: 150px; object-fit: cover; background: #f9f9f9; }
+        .img-main { grid-row: span 2; height: 310px !important; }
+        .price { font-weight: 900; font-size: 1.5rem; margin: 10px 0; }
+        .paypal-slot { min-height: 150px; margin-top: 20px; }
     </style>
 </head>
 <body>
@@ -33,52 +28,49 @@
 <div class="container">
     <div class="product-card">
         <div class="vura-gallery">
-            <img src="identity_front.jpg" class="img-main" alt="Vura Identity">
-            <img src="identity_folded.jpg" class="img-detail">
-            <img src="identity_model.jpg" class="img-detail">
+            <img src="identity_front.jpg" class="img-main">
+            <img src="identity_folded.jpg">
+            <img src="identity_model.jpg">
         </div>
-        <h2 class="title">VURA "Identity" - Onyx Black</h2>
+        <h3>VURA "Identity" - Onyx Black</h3>
         <p class="price">29,95€</p>
-        <div id="paypal-1" class="paypal-slot"></div>
+        <div id="paypal-container-LKQLL93SSBWUG"></div>
     </div>
 
     <div class="product-card">
         <div class="vura-gallery">
-            <img src="identity_blue_front.jpg" class="img-main" alt="Vura Identity Blue">
-            <img src="identity_blue_folded.jpg" class="img-detail">
-            <img src="identity_blue_model.jpg" class="img-detail">
+            <img src="identity_blue_front.jpg" class="img-main">
+            <img src="identity_blue_folded.jpg">
+            <img src="identity_blue_model.jpg">
         </div>
-        <h2 class="title">VURA "Identity" - Midnight Blue</h2>
+        <h3>VURA "Identity" - Midnight Blue</h3>
         <p class="price">29,95€</p>
-        <div id="paypal-2" class="paypal-slot"></div>
+        <div id="paypal-container-34ZXEXB72C8SG"></div>
     </div>
 
     <div class="product-card">
         <div class="vura-gallery">
-            <img src="gorra_frontal.jpg" class="img-main" alt="Vura Legacy Cap">
-            <img src="gorra_detalle.jpg" class="img-detail">
-            <img src="gorra_modelo.jpg" class="img-detail">
+            <img src="gorra_frontal.jpg" class="img-main">
+            <img src="gorra_detalle.jpg">
+            <img src="gorra_modelo.jpg">
         </div>
-        <h2 class="title">VURA "Legacy" Cap</h2>
+        <h3>VURA "Legacy" Cap</h3>
         <p class="price">24,95€</p>
-        <div id="paypal-3" class="paypal-slot"></div>
+        <div id="paypal-container-3FSZYNXLKHHAC"></div>
     </div>
 </div>
 
-<footer>© 2026 VURA - ELEVATED URBAN STAPLES</footer>
-
 <script>
-    // Esperamos un segundo a que cargue el SDK y renderizamos los botones
-    setTimeout(function() {
+    window.onload = function() {
         if (window.paypal && window.paypal.HostedButtons) {
-            // Botón 1 (Negra)
-            paypal.HostedButtons({ hostedButtonId: "LKQLL93SSBWUG" }).render("#paypal-1");
-            // Botón 2 (Azul)
-            paypal.HostedButtons({ hostedButtonId: "34ZXEXB72C8SG" }).render("#paypal-2");
-            // Botón 3 (Gorra)
-            paypal.HostedButtons({ hostedButtonId: "3FSZYNXLKHHAC" }).render("#paypal-3");
+            // Botón Negra
+            paypal.HostedButtons({ hostedButtonId: "LKQLL93SSBWUG" }).render("#paypal-container-LKQLL93SSBWUG");
+            // Botón Azul
+            paypal.HostedButtons({ hostedButtonId: "34ZXEXB72C8SG" }).render("#paypal-container-34ZXEXB72C8SG");
+            // Botón Gorra (El de tu captura)
+            paypal.HostedButtons({ hostedButtonId: "3FSZYNXLKHHAC" }).render("#paypal-container-3FSZYNXLKHHAC");
         }
-    }, 1500);
+    };
 </script>
 
 </body>
